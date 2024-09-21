@@ -40,5 +40,5 @@ command part of your build process.
 
 ## Author
 
-The `Complex` structure and signature is ported from the Futhark `complex`
-package.
+The `Complex` structure and the `COMPLEX` signature are ported from the Futhark
+`complex` package.
