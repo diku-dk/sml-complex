@@ -44,6 +44,17 @@ structure Complex :> COMPLEX = struct
 
   fun abs (a: complex) = fromRe (mag a)
 
+  fun fmt f (a,b) =
+      if Real.==(b,0.0) then Real.fmt f a
+      else if Real.==(a,0.0) then
+        Real.fmt f b ^ "i"
+      else
+        Real.fmt f a ^
+        (if b < 0.0 then "-" ^ Real.fmt f (~b) ^ "i"
+         else "+" ^ Real.fmt f b ^ "i")
+
+  fun toString c = fmt (StringCvt.GEN NONE) c
+
   fun (a: complex) < (b: complex) = Real.< (mag a, mag b)
   fun (a: complex) > (b: complex) = Real.> (mag a, mag b)
   fun (a: complex) >= (b: complex) = not(a < b)

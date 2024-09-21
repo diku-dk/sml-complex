@@ -114,4 +114,12 @@ val () = tst "fromInt" (let val x = fromInt 5
                         in re x ~~ 5.0 andalso im x ~~ 0.0
                         end)
 
+val () = tst "toString1" (toString (mk (2.0,3.0)) = "2.0+3.0i")
+
+val () = tst "toString2" (toString (mk (~2.0,~3.0)) = "~2.0-3.0i")
+
+val () = tst "toString3" (toString (mk (~2.0,0.0)) = "~2.0")
+
+val () = tst "toString4" (toString (mk (0.0,~3.0)) = "~3.0i")
+
 val () = print "end\n"

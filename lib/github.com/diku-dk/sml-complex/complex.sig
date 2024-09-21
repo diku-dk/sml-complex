@@ -8,33 +8,36 @@ part, which may not be how it is represented.
 signature COMPLEX = sig
   type complex
 
-  val mk      : real * real -> complex
-  val fromRe  : real -> complex
-  val fromIm  : real -> complex
-  val fromInt : int -> complex
+  val mk       : real * real -> complex
+  val fromRe   : real -> complex
+  val fromIm   : real -> complex
+  val fromInt  : int -> complex
 
-  val conj    : complex -> complex
-  val re      : complex -> real
-  val im      : complex -> real
-  val mag     : complex -> real
-  val arg     : complex -> real
+  val conj     : complex -> complex
+  val re       : complex -> real
+  val im       : complex -> real
+  val mag      : complex -> real
+  val arg      : complex -> real
 
-  val ~       : complex -> complex
-  val +       : complex * complex -> complex
-  val -       : complex * complex -> complex
-  val *       : complex * complex -> complex
-  val /       : complex * complex -> complex
-  val <       : complex * complex -> bool
-  val >       : complex * complex -> bool
-  val >=      : complex * complex -> bool
-  val <=      : complex * complex -> bool
+  val ~        : complex -> complex
+  val +        : complex * complex -> complex
+  val -        : complex * complex -> complex
+  val *        : complex * complex -> complex
+  val /        : complex * complex -> complex
+  val <        : complex * complex -> bool
+  val >        : complex * complex -> bool
+  val >=       : complex * complex -> bool
+  val <=       : complex * complex -> bool
 
-  val sqrt    : complex -> complex
-  val exp     : complex -> complex
-  val ln      : complex -> complex
-  val abs     : complex -> complex
-  val pow     : complex * complex -> complex
-  val fma     : complex * complex * complex -> complex
+  val sqrt     : complex -> complex
+  val exp      : complex -> complex
+  val ln       : complex -> complex
+  val abs      : complex -> complex
+  val pow      : complex * complex -> complex
+  val fma      : complex * complex * complex -> complex
+
+  val fmt      : StringCvt.realfmt -> complex -> string
+  val toString : complex -> string
 end
 
 (**

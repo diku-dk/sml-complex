@@ -34,4 +34,8 @@ pow2    	OK
 fma1    	OK
 fma2    	OK
 fromInt    	OK
+toString1    	OK
+toString2    	OK
+toString3    	OK
+toString4    	OK
 end
