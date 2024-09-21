@@ -1,0 +1,37 @@
+Testing structure Complex...
+mag1    	OK
+mag2    	OK
+mag3    	OK
+arg1    	OK
+arg2    	OK
+arg3    	OK
+arg4    	OK
+add    	OK
+sub    	OK
+mul    	OK
+div    	OK
+sqrt    	OK
+exp1    	OK
+exp2    	OK
+ln1    	OK
+ln2    	OK
+conj    	OK
+neg    	OK
+abs1    	OK
+abs2    	OK
+lt1    	OK
+lt2    	OK
+gt1    	OK
+gt2    	OK
+leq1    	OK
+leq2    	OK
+leq3    	OK
+geq1    	OK
+geq2    	OK
+geq3    	OK
+pow1    	OK
+pow2    	OK
+fma1    	OK
+fma2    	OK
+fromInt    	OK
+end
