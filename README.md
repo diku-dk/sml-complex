@@ -7,7 +7,7 @@ Standard ML package for complex numbers.
 - `lib/github.com/diku-dk/sml-complex/complex.mlb`:
 
   - **signature** [`COMPLEX`](lib/github.com/diku-dk/sml-complex/complex.sig)
-  - **structure** `Complex`
+  - **structure** `Complex` :> [`COMPLEX`](lib/github.com/diku-dk/sml-complex/complex.sig)
 
 ## Use of the package
 
