@@ -37,6 +37,7 @@ signature COMPLEX = sig
   val fma      : complex * complex * complex -> complex
 
   val fmt      : StringCvt.realfmt -> complex -> string
+  val fmtBrief : StringCvt.realfmt -> complex -> string
   val toString : complex -> string
 end
 
@@ -98,4 +99,12 @@ magnitude of `b`.
 
 [fma (a,b,c)] returns the complex number `a*b+c`.
 
+[fmt f c] returns a string representation of c with reals printed using the
+formatter f.
+
+[fmtBrief f c] returns a string representation of c with reals printed using the
+formatter f, but briefified by erasing ".0" in string represenation of reals and
+by replacing 1i and ~1i with i and ~i, respectively.
+
+[toString c] is equivalent to fmt (StringCvt.GEN NONE) c.
 *)

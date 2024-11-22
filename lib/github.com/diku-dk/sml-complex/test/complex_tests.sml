@@ -122,4 +122,22 @@ val () = tst "toString3" (toString (mk (~2.0,0.0)) = "~2.0")
 
 val () = tst "toString4" (toString (mk (0.0,~3.0)) = "~3.0i")
 
+fun toString' c = fmtBrief (StringCvt.GEN NONE) c
+
+val () = tst "toString'1" (toString' (mk (2.0,3.0)) = "2+3i")
+
+val () = tst "toString'2" (toString' (mk (~2.0,~3.0)) = "~2-3i")
+
+val () = tst "toString'3" (toString' (mk (~2.0,0.0)) = "~2")
+
+val () = tst "toString'4" (toString' (mk (0.0,~3.0)) = "~3i")
+
+val () = tst "toString'5" (toString' (mk (0.0,~1.0)) = "~i")
+
+val () = tst "toString'6" (toString' (mk (1.4,1.0)) = "1.4+i")
+
+val () = tst "toString'7" (toString' (mk (~1.4,~1.0)) = "~1.4-i")
+
+val () = tst "toString'8" (toString' (mk (1.4,~1.3)) = "1.4-1.3i")
+
 val () = print "end\n"

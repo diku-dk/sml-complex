@@ -44,15 +44,25 @@ structure Complex :> COMPLEX = struct
 
   fun abs (a: complex) = fromRe (mag a)
 
-  fun fmt f (a,b) =
-      if Real.==(b,0.0) then Real.fmt f a
-      else if Real.==(a,0.0) then
-        Real.fmt f b ^ "i"
-      else
-        Real.fmt f a ^
-        (if b < 0.0 then "-" ^ Real.fmt f (~b) ^ "i"
-         else "+" ^ Real.fmt f b ^ "i")
+  fun fmt0 (br:bool) f (a,b) =
+      let fun pp r =
+              let val s = Real.fmt f r
+              in if br andalso String.isSuffix ".0" s
+                 then String.extract(s,0,SOME(size s-2))
+                 else s
+              end
+          fun ppi r = case pp r of
+                          "1" => "i"
+                        | "~1" => "~i"
+                        | s => s ^ "i"
+      in if Real.==(b,0.0) then pp a
+         else if Real.==(a,0.0) then ppi b
+         else pp a ^ (if b < 0.0 then "-" ^ ppi (~b)
+                      else "+" ^ ppi b)
+      end
 
+  fun fmt f (a,b) = fmt0 false f (a,b)
+  fun fmtBrief f (a,b) = fmt0 true f (a,b)
   fun toString c = fmt (StringCvt.GEN NONE) c
 
   fun (a: complex) < (b: complex) = Real.< (mag a, mag b)
